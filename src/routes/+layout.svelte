@@ -143,7 +143,7 @@
 	<header class="app-header">
 		<div class="container flex items-center justify-between">
 			<a href="/" class="logo" aria-label="Value Context Protocol Home">
-				<span class="logo-icon" aria-hidden="true"><img src="/favicon.svg" alt="" width="40" height="40" /></span>
+				<span class="logo-icon" aria-hidden="true"><img src="/vcp-logo-nobg.svg" alt="" width="40" height="40" /></span>
 				<span class="logo-text">Value <span class="logo-highlight">Context</span> Protocol</span>
 			</a>
 
@@ -246,7 +246,7 @@
 		<div class="container">
 			<div class="footer-content">
 				<div class="footer-brand">
-					<span class="footer-logo" aria-hidden="true"><img src="/favicon.svg" alt="" width="44" height="44" /></span>
+					<span class="footer-logo" aria-hidden="true"><img src="/vcp-logo-nobg.svg" alt="" width="44" height="44" /></span>
 					<div>
 						<p class="footer-title">Value Context Protocol</p>
 						<p class="footer-tagline">Context that travels with you, wherever you need it.</p>
