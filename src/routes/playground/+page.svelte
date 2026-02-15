@@ -4,7 +4,7 @@
 	 */
 	import { encodeContextToCSM1, getEmojiLegend, getTransmissionSummary, toWireFormat, parseCSM1Token } from '$lib/vcp/token';
 	import type { VCPContext, ConstraintFlags, PortablePreferences, PersonalState, CognitiveState, EmotionalTone, EnergyLevel, PerceivedUrgency, BodySignals } from '$lib/vcp/types';
-	import { Breadcrumb, ContextLifecycleIndicator } from '$lib/components/shared';
+	import { Breadcrumb, ContextLifecycleIndicator, StreamingChat } from '$lib/components/shared';
 	import { loadVcpWasm, type VcpWasmModule } from '$lib/vcp/wasmLoader';
 	import { isPolyfillRequested } from '$lib/webmcp/polyfill';
 
@@ -1084,6 +1084,32 @@
 		</section>
 	{/if}
 
+	<!-- LLM Chat -->
+	<section class="playground-chat-section">
+		<div class="panel">
+			<div class="panel-header">
+				<h2>
+					<i class="fa-solid fa-comments" aria-hidden="true"></i>
+					Chat with AI
+					<span class="wasm-badge">VCP-Aware</span>
+				</h2>
+				<p class="chat-context-hint">
+					The AI reads your live context — change settings above and it adapts.
+				</p>
+			</div>
+			<div class="playground-chat-container">
+				<StreamingChat
+					endpoint="/api/chat"
+					systemContext={context}
+					constitutionId={context.constitution.id}
+					persona={context.constitution.persona}
+					placeholder="Ask the AI something — it knows your VCP context..."
+					fallbackResponse="This is a demo response. With a live API key, the AI would adapt its tone and suggestions based on your current VCP context — your energy level, constraints, preferences, and persona."
+				/>
+			</div>
+		</div>
+	</section>
+
 	<!-- Try in a Demo -->
 	<section class="try-demo-section">
 		<h3><i class="fa-solid fa-play" aria-hidden="true"></i> Try This Context in a Demo</h3>
@@ -1560,6 +1586,24 @@
 			flex-direction: column;
 			align-items: flex-start;
 		}
+	}
+
+	/* LLM Chat Section */
+	.playground-chat-section {
+		margin-top: var(--space-2xl);
+	}
+
+	.playground-chat-container {
+		min-height: 450px;
+		max-height: 600px;
+		display: flex;
+		flex-direction: column;
+	}
+
+	.chat-context-hint {
+		font-size: var(--text-xs);
+		color: var(--color-text-muted);
+		margin: 0;
 	}
 
 	/* Try Demo Section */
