@@ -27,17 +27,8 @@ export {
 	getPersonaTone,
 	getActivePersona,
 	constitutionAppliesToScope,
-	getConstitutionsForScope,
-	suggestPersonaFromPersonalState
+	getConstitutionsForScope
 } from './constitution';
-
-// Transition detection
-export { detectTransition } from './transition-detection';
-export type { TransitionSeverity, TransitionResult } from './transition-detection';
-
-// Natural language parsing
-export { parsePersonalStateFromText, applyParsedSignals } from './nl-parser';
-export type { ParsedSignal } from './nl-parser';
 
 // Audit trail
 export {

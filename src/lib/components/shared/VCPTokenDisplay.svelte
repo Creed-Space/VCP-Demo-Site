@@ -22,7 +22,7 @@
 
 	let {
 		token,
-		version = '3.1',
+		version = '2.0',
 		sections = [],
 		title = 'VCP Token',
 		showCopy = true,
@@ -31,14 +31,11 @@
 	}: Props = $props();
 
 	let copied = $state(false);
-	let prevToken = $state<string | undefined>(undefined);
+	let prevToken = $state(token);
 	let isUpdating = $state(false);
-	// HIGH FIX 2026-02-04: Track timeout ID for cleanup on unmount
-	let copyTimeoutId: ReturnType<typeof setTimeout> | null = null;
 
 	$effect(() => {
-		// Track token changes for animation
-		if (prevToken !== undefined && token !== prevToken && animated) {
+		if (token !== prevToken && animated) {
 			isUpdating = true;
 			const timeout = setTimeout(() => {
 				isUpdating = false;
@@ -49,49 +46,12 @@
 		prevToken = token;
 	});
 
-	// HIGH FIX 2026-02-04: Cleanup copy feedback timeout on unmount
-	$effect(() => {
-		return () => {
-			if (copyTimeoutId) {
-				clearTimeout(copyTimeoutId);
-				copyTimeoutId = null;
-			}
-		};
-	});
-
-	/**
-	 * HIGH FIX 2026-02-04: Clipboard with HTTPS fallback and proper cleanup
-	 */
 	async function copyToken() {
-		// Clear any existing timeout
-		if (copyTimeoutId) {
-			clearTimeout(copyTimeoutId);
-		}
-
 		try {
-			// Try modern Clipboard API first (requires HTTPS)
-			if (navigator.clipboard && window.isSecureContext) {
-				await navigator.clipboard.writeText(token);
-			} else {
-				// Fallback for HTTP connections
-				const textArea = document.createElement('textarea');
-				textArea.value = token;
-				textArea.style.position = 'fixed';
-				textArea.style.left = '-9999px';
-				textArea.style.top = '-9999px';
-				document.body.appendChild(textArea);
-				textArea.focus();
-				textArea.select();
-				try {
-					document.execCommand('copy');
-				} finally {
-					document.body.removeChild(textArea);
-				}
-			}
+			await navigator.clipboard.writeText(token);
 			copied = true;
-			copyTimeoutId = setTimeout(() => {
+			setTimeout(() => {
 				copied = false;
-				copyTimeoutId = null;
 			}, 2000);
 		} catch {
 			console.error('Failed to copy token');
@@ -107,7 +67,7 @@
 		</span>
 		<span class="token-version">v{version}</span>
 		{#if showCopy}
-			<button class="copy-btn" onclick={copyToken} title="Copy token" aria-label="Copy token to clipboard">
+			<button class="copy-btn" onclick={copyToken} title="Copy token">
 				{#if copied}
 					<i class="fa-solid fa-check" aria-hidden="true"></i>
 				{:else}
