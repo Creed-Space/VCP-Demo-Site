@@ -1255,6 +1255,11 @@
 
 	.persona-icon {
 		font-size: 1.25rem;
+		color: var(--color-text-muted);
+	}
+
+	.persona-btn.active .persona-icon {
+		color: var(--color-primary);
 	}
 
 	.persona-name {
