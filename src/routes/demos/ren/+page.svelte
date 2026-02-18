@@ -325,7 +325,7 @@
 					<div class="auction-waiting">
 						<i class="fa-solid fa-gavel" aria-hidden="true"></i>
 						<p>Press <strong>Auto-Play</strong> or <strong>Next Round</strong> to start the energy market auction.</p>
-						<p class="auction-hint">Watch for Round 2 -- Ren's agents will pass on cheap fossil energy because their sustainability constraint fires.</p>
+						<p class="auction-hint">Watch for Round 2 — Ren's agents will pass on cheap fossil energy because their sustainability constraint fires.</p>
 					</div>
 				{/if}
 
@@ -372,7 +372,7 @@
 								<i class="fa-solid fa-shield-halved" aria-hidden="true"></i>
 								<div>
 									<strong>Sustainability constraint fired.</strong> Both of Ren's agents passed on the cheapest block in the auction.
-									Their carried values made this decision automatic -- no human had to intervene.
+									Their carried values made this decision automatic — no human had to intervene.
 								</div>
 							</div>
 						{/if}
