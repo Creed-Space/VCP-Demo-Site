@@ -286,7 +286,7 @@
 			</div>
 
 			<div class="footer-bottom">
-				<p>Value Context Protocol — an open standard</p>
+				<p>Value Context Protocol — An open standard for prosaic alignment</p>
 				<p>&copy; 2026 Creed Space &mdash; Code released under <a href="https://opensource.org/licenses/MIT" target="_blank" rel="noopener noreferrer" class="license-link">MIT License</a></p>
 			</div>
 		</div>
