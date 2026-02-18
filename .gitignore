@@ -1,10 +1,4 @@
 node_modules/
-build/
 .svelte-kit/
-.env
-.env.*
-.DS_Store
-coverage/
-logs/
-*.pyc
-__pycache__/
+build/
+dist/

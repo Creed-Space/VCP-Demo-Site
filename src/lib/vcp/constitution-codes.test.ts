@@ -125,8 +125,8 @@ describe('SCOPE_INITIALS', () => {
 		expect(SCOPE_INITIALS.accuracy).toBe('Ac');
 	});
 
-	it('has exactly 19 scope types', () => {
-		expect(Object.keys(SCOPE_INITIALS).length).toBe(19);
+	it('has exactly 20 scope types', () => {
+		expect(Object.keys(SCOPE_INITIALS).length).toBe(20);
 	});
 });
 

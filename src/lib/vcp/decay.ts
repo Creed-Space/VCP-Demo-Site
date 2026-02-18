@@ -62,7 +62,9 @@ export function computeEffectiveIntensity(
 
 	const elapsed = (now.getTime() - declaredAt.getTime()) / 1000;
 	if (elapsed < 0) {
-		console.warn('VCP decay: declared_at is in the future, returning original intensity');
+		if (import.meta.env.DEV) {
+			console.warn('VCP decay: declared_at is in the future, returning original intensity');
+		}
 		return declared;
 	}
 	if (elapsed === 0) return declared;

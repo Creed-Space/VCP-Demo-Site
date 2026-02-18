@@ -39,7 +39,9 @@ function loadFromStorage<T>(key: string): T | null {
 		const stored = localStorage.getItem(key);
 		return stored ? JSON.parse(stored) : null;
 	} catch {
-		console.warn(`Failed to load ${key} from localStorage`);
+		if (import.meta.env.DEV) {
+			console.warn(`Failed to load ${key} from localStorage`);
+		}
 		return null;
 	}
 }
@@ -53,7 +55,9 @@ function saveToStorage<T>(key: string, value: T | null): void {
 			localStorage.removeItem(key);
 		}
 	} catch {
-		console.warn(`Failed to save ${key} to localStorage`);
+		if (import.meta.env.DEV) {
+			console.warn(`Failed to save ${key} to localStorage`);
+		}
 	}
 }
 

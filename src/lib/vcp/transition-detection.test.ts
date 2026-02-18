@@ -213,7 +213,7 @@ describe('detectTransition', () => {
 			});
 			// Emergency constraint keywords are in the constraints JSON
 			const emergencyCtx = makeContext();
-			(emergencyCtx as Record<string, unknown>).constraints = { emergency: true };
+			(emergencyCtx as unknown as Record<string, unknown>).constraints = { emergency: true };
 			const result = detectTransition(old, emergencyCtx);
 			expect(result.severity).toBe('emergency');
 			expect(result.affects_safety).toBe(true);
@@ -222,7 +222,7 @@ describe('detectTransition', () => {
 		it('detects enforcement constraint keyword as emergency', () => {
 			const old = makeContext();
 			const emergencyCtx = makeContext();
-			(emergencyCtx as Record<string, unknown>).constraints = { enforcement: true, mode: 'enforcement active' };
+			(emergencyCtx as unknown as Record<string, unknown>).constraints = { enforcement: true, mode: 'enforcement active' };
 			const result = detectTransition(old, emergencyCtx);
 			expect(result.severity).toBe('emergency');
 			expect(result.affects_safety).toBe(true);

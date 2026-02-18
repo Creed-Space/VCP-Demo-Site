@@ -63,7 +63,7 @@ describe('StreamingChat', () => {
 		render(StreamingChat, { props: { endpoint: '/api/chat' } });
 		await waitFor(() => {
 			const getCalls = fetchMock.mock.calls.filter(
-				(call: unknown[]) => call[1]?.method === 'GET'
+				(call: unknown[]) => (call[1] as RequestInit | undefined)?.method === 'GET'
 			);
 			expect(getCalls.length).toBe(1);
 			expect(getCalls[0][0]).toBe('/api/chat');
@@ -94,7 +94,7 @@ describe('StreamingChat', () => {
 		await tick();
 
 		const postCalls = fetchMock.mock.calls.filter(
-			(call: unknown[]) => call[1]?.method === 'POST'
+			(call: unknown[]) => (call[1] as RequestInit | undefined)?.method === 'POST'
 		);
 		expect(postCalls.length).toBe(0);
 	});
@@ -107,7 +107,7 @@ describe('StreamingChat', () => {
 		await tick();
 
 		const postCalls = fetchMock.mock.calls.filter(
-			(call: unknown[]) => call[1]?.method === 'POST'
+			(call: unknown[]) => (call[1] as RequestInit | undefined)?.method === 'POST'
 		);
 		expect(postCalls.length).toBe(0);
 	});
@@ -261,7 +261,7 @@ describe('StreamingChat', () => {
 		});
 
 		const postCalls = fetchMock.mock.calls.filter(
-			(call: unknown[]) => call[1]?.method === 'POST'
+			(call: unknown[]) => (call[1] as RequestInit | undefined)?.method === 'POST'
 		);
 		expect(postCalls.length).toBe(1);
 	});
@@ -279,7 +279,7 @@ describe('StreamingChat', () => {
 		await tick();
 
 		const postCalls = fetchMock.mock.calls.filter(
-			(call: unknown[]) => call[1]?.method === 'POST'
+			(call: unknown[]) => (call[1] as RequestInit | undefined)?.method === 'POST'
 		);
 		expect(postCalls.length).toBe(0);
 	});
@@ -337,7 +337,7 @@ describe('StreamingChat', () => {
 
 		await waitFor(() => {
 			const getCalls = fetchMock.mock.calls.filter(
-				(call: unknown[]) => call[1]?.method === 'GET'
+				(call: unknown[]) => (call[1] as RequestInit | undefined)?.method === 'GET'
 			);
 			expect(getCalls.length).toBe(1);
 			expect(getCalls[0][0]).toBe('/api/custom-chat');

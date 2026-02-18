@@ -22,8 +22,9 @@ interface RedirectResult {
 	location: string;
 }
 
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
 async function callRedirectLoader(
-	loadFn: (event: unknown) => Promise<never>
+	loadFn: (...args: any[]) => any
 ): Promise<RedirectResult> {
 	try {
 		await loadFn({} as unknown);
@@ -291,7 +292,8 @@ describe('All page servers export a load function', () => {
 // ===========================================================================
 
 describe('Redirect mapping completeness', () => {
-	const routeMap: Array<[string, () => Promise<{ load: (e: unknown) => Promise<never> }>, string]> = [
+	// eslint-disable-next-line @typescript-eslint/no-explicit-any
+	const routeMap: Array<[string, () => Promise<{ load: (...args: any[]) => any }>, string]> = [
 		['personal/', () => import('../personal/+page.server'), '/demos/gentian'],
 		['personal/skip', () => import('../personal/skip/+page.server'), '/demos/gentian'],
 		['personal/coach', () => import('../personal/coach/+page.server'), '/demos/gentian'],

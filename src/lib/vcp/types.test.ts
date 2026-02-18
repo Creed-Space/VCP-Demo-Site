@@ -31,7 +31,7 @@ describe('DEFAULT_FEATURES', () => {
 	});
 
 	it('has no unexpected keys', () => {
-		const allExpected = new Set([...EXPECTED_TRUE_FLAGS, ...EXPECTED_FALSE_FLAGS]);
+		const allExpected = new Set<string>([...EXPECTED_TRUE_FLAGS, ...EXPECTED_FALSE_FLAGS]);
 		for (const key of Object.keys(DEFAULT_FEATURES)) {
 			expect(allExpected.has(key)).toBe(true);
 		}

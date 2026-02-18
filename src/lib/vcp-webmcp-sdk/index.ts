@@ -66,11 +66,13 @@ export async function registerVCPTools(
 			registrations.push(reg);
 			registered.push(tool.name);
 		} catch (err) {
-			console.warn(`[VCP WebMCP SDK] Failed to register ${tool.name}:`, err);
+			if (import.meta.env.DEV) {
+				console.warn(`[VCP WebMCP SDK] Failed to register ${tool.name}:`, err);
+			}
 		}
 	}
 
-	if (registered.length > 0) {
+	if (import.meta.env.DEV && registered.length > 0) {
 		console.log(`[VCP WebMCP SDK] Registered ${registered.length} tools: ${registered.join(', ')}`);
 	}
 

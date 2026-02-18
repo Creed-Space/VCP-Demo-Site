@@ -294,7 +294,7 @@ describe('resolveRules', () => {
 		const constitution = loadConstitution('personal.growth.creative')!;
 		const ctx = makeContext();
 		// Remove constraints entirely
-		delete (ctx as Record<string, unknown>).constraints;
+		delete (ctx as unknown as Record<string, unknown>).constraints;
 		const result = resolveRules(ctx, constitution);
 
 		// Only untriggered rules should be active
@@ -439,7 +439,7 @@ describe('getActivePersona', () => {
 
 	it('defaults to ambassador when constitution is undefined', () => {
 		const ctx = makeContext();
-		(ctx as Record<string, unknown>).constitution = undefined;
+		(ctx as unknown as Record<string, unknown>).constitution = undefined;
 		expect(getActivePersona(ctx)).toBe('ambassador');
 	});
 

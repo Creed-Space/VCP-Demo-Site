@@ -1,8 +1,8 @@
 import { redirect } from '@sveltejs/kit';
 import type { Handle } from '@sveltejs/kit';
 
-if (!process.env.GEMINI_API_KEY && process.env.NODE_ENV === 'production') {
-	console.warn('GEMINI_API_KEY not set - live chat will use fallback mode');
+if (!process.env.GEMINI_API_KEY && process.env.NODE_ENV === 'production' && typeof process.env.SUPPRESS_WARNINGS === 'undefined') {
+	process.stderr.write('[vcp-demo] GEMINI_API_KEY not set - live chat will use fallback mode\n');
 }
 
 /**

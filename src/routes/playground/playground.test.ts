@@ -26,6 +26,17 @@ vi.mock('$lib/webmcp/polyfill', () => ({
 	isPolyfillRequested: vi.fn().mockReturnValue(false)
 }));
 
+vi.mock('$app/navigation', () => ({
+	replaceState: vi.fn()
+}));
+
+vi.mock('$app/stores', () => {
+	const url = new URL('http://localhost/playground');
+	return {
+		page: { subscribe: (fn: (v: { url: URL }) => void) => { fn({ url }); return () => {}; } }
+	};
+});
+
 // Mock shared Svelte components as minimal HTML stubs so the Playground can
 // render without pulling in StreamingChat's fetch warmup, ContextLifecycleIndicator's
 // setInterval ticker, or Breadcrumb's icon dependencies.
@@ -225,7 +236,7 @@ describe('Playground page', () => {
 
 	it('renders the page subtitle describing the playground purpose', () => {
 		renderPage();
-		const subtitle = screen.getByText(/Build context tokens interactively/i);
+		const subtitle = screen.getByText(/Build context tokens, explore intent inference/i);
 		expect(subtitle).toBeTruthy();
 	});
 
@@ -234,5 +245,55 @@ describe('Playground page', () => {
 		const note = container.querySelector('.webmcp-note');
 		expect(note).toBeTruthy();
 		expect(note?.textContent).toContain('WebMCP tools available');
+	});
+
+	// ------------------------------------------------------------------
+	// Chat section renders
+	// ------------------------------------------------------------------
+	it('renders the Chat with AI section', () => {
+		const { container } = renderPage();
+		const chatSection = container.querySelector('.chat-section');
+		expect(chatSection).toBeTruthy();
+	});
+
+	it('shows the persona badge in the chat header', () => {
+		const { container } = renderPage();
+		const badge = container.querySelector('.chat-persona-badge');
+		expect(badge).toBeTruthy();
+		expect(badge?.textContent).toBe('muse');
+	});
+
+	it('shows the context-aware hint in the chat header', () => {
+		renderPage();
+		const hint = screen.getByText(/Context-aware.*changes above shape responses below/i);
+		expect(hint).toBeTruthy();
+	});
+
+	// ------------------------------------------------------------------
+	// Tab bar renders all tabs
+	// ------------------------------------------------------------------
+	it('renders all three tab buttons', () => {
+		renderPage();
+		const tabs = ['Context Builder', 'Transparency', 'Compass'];
+		for (const label of tabs) {
+			const tab = screen.getByRole('tab', { name: new RegExp(label, 'i') });
+			expect(tab).toBeTruthy();
+		}
+	});
+
+	it('defaults to the Context Builder tab as active', () => {
+		renderPage();
+		const contextTab = screen.getByRole('tab', { name: /Context Builder/i });
+		expect(contextTab.getAttribute('aria-selected')).toBe('true');
+	});
+
+	// ------------------------------------------------------------------
+	// replaceState is safe when router not initialized
+	// ------------------------------------------------------------------
+	it('does not throw when replaceState is called before router init', () => {
+		// The mock for $app/navigation already prevents real router calls.
+		// This test simply verifies the page renders without errors,
+		// which exercises the safeReplaceState wrapper.
+		expect(() => renderPage()).not.toThrow();
 	});
 });

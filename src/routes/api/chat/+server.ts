@@ -64,7 +64,7 @@ export const POST: RequestHandler = async ({ request, getClientAddress }) => {
 	}
 
 	const systemPrompt = buildSystemPrompt(vcp_context, constitution_id, persona);
-	const genParams = computeGenerationParams(vcp_context?.personal_state);
+	const genParams = computeGenerationParams(vcp_context?.personal_state as Record<string, unknown> | undefined);
 
 	const controller = new AbortController();
 	const timeout = setTimeout(() => controller.abort(), 30_000);

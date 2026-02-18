@@ -50,6 +50,7 @@ const SCOPE_INITIALS: Record<ScopeType, string> = {
 	transparency: 'Tr',
 	governance: 'Go',
 	epistemic: 'Ep',
+	mediation: 'Md',
 	accuracy: 'Ac'
 };
 

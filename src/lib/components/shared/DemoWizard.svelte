@@ -73,7 +73,8 @@
 	}
 </script>
 
-<div class="demo-wizard" role="region" aria-label="Demo: {title}" onkeydown={handleKeydown}>
+<!-- svelte-ignore a11y_no_noninteractive_element_interactions -->
+<div class="demo-wizard" role="group" aria-label="Demo: {title}" onkeydown={handleKeydown} tabindex="-1">
 	<!-- Header -->
 	<div class="wizard-header">
 		<a href="/demos" class="wizard-back">

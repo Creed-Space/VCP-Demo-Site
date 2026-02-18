@@ -96,7 +96,7 @@ describe('wasmLoader', () => {
 		};
 
 		// Mock the dynamic import at the global level
-		const originalImport = globalThis.__vitest_dynamic_import__ ?? undefined;
+		const originalImport = (globalThis as Record<string, unknown>).__vitest_dynamic_import__ ?? undefined;
 		// Vitest transforms import() calls - we intercept via URL mock + module mock
 		const OriginalURL = globalThis.URL;
 

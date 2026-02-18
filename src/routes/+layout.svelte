@@ -143,7 +143,7 @@
 	<header class="app-header">
 		<div class="container flex items-center justify-between">
 			<a href="/" class="logo" aria-label="Value Context Protocol Home">
-				<span class="logo-icon" aria-hidden="true"><img src="/vcp-logo-nobg.svg" alt="" width="40" height="40" /></span>
+				<span class="logo-icon" aria-hidden="true"><img src="/favicon.svg" alt="" width="40" height="40" /></span>
 				<span class="logo-text">Value <span class="logo-highlight">Context</span> Protocol</span>
 			</a>
 
@@ -152,7 +152,7 @@
 				<a href="/about" class="nav-link" class:active={isActive('/about')}>About</a>
 				<a href="/demos" class="nav-link" class:active={isActive('/demos')}>Demos</a>
 				<a href="/docs" class="nav-link" class:active={isActive('/docs')}>Docs</a>
-				<a href="/playground" class="nav-link" class:active={isActive('/playground')}>Playground</a>
+				<a href="/playground" class="nav-link" class:active={isActive('/playground') || isActive('/transparency') || isActive('/compass')}>Playground</a>
 				{#if agentActive}
 					<span class="webmcp-indicator" aria-live="polite">
 						<i class="fa-solid fa-robot" aria-hidden="true"></i>
@@ -205,7 +205,7 @@
 				<a href="/docs" class="mobile-nav-link" class:active={isActive('/docs')} onclick={() => (mobileMenuOpen = false)}>
 					Documentation
 				</a>
-				<a href="/playground" class="mobile-nav-link" class:active={isActive('/playground')} onclick={() => (mobileMenuOpen = false)}>
+				<a href="/playground" class="mobile-nav-link" class:active={isActive('/playground') || isActive('/transparency') || isActive('/compass')} onclick={() => (mobileMenuOpen = false)}>
 					Playground
 				</a>
 				<hr class="mobile-nav-divider" />
@@ -246,7 +246,7 @@
 		<div class="container">
 			<div class="footer-content">
 				<div class="footer-brand">
-					<span class="footer-logo" aria-hidden="true"><img src="/vcp-logo-nobg.svg" alt="" width="44" height="44" /></span>
+					<span class="footer-logo" aria-hidden="true"><img src="/favicon.svg" alt="" width="44" height="44" /></span>
 					<div>
 						<p class="footer-title">Value Context Protocol</p>
 						<p class="footer-tagline">Context that travels with you, wherever you need it.</p>

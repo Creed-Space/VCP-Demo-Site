@@ -73,7 +73,6 @@ export const PERSONAL_STATE_EMOJI = {
  */
 export function encodeContextToCSM1(ctx: VCPContext): string {
 	if (!ctx.constitution?.id) {
-		console.warn('VCP token: missing constitution ID');
 		return '';
 	}
 

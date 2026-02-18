@@ -364,9 +364,9 @@ describe('getStakeholderView', () => {
 		expect(view).toHaveLength(1);
 		const entry = view[0];
 		// Should not have data_shared, data_withheld, or private details
-		expect((entry as Record<string, unknown>).data_shared).toBeUndefined();
-		expect((entry as Record<string, unknown>).data_withheld).toBeUndefined();
-		expect((entry as Record<string, unknown>).details).toBeUndefined();
+		expect((entry as unknown as Record<string, unknown>).data_shared).toBeUndefined();
+		expect((entry as unknown as Record<string, unknown>).data_withheld).toBeUndefined();
+		expect((entry as unknown as Record<string, unknown>).details).toBeUndefined();
 	});
 
 	it('preserves timestamp and event_type', () => {
@@ -514,7 +514,7 @@ describe('getComparisonView', () => {
 			})
 		];
 		const comparison = getComparisonView(entries, 'hr');
-		expect((comparison.stakeholderView[0] as Record<string, unknown>).data_shared).toBeUndefined();
+		expect((comparison.stakeholderView[0] as unknown as Record<string, unknown>).data_shared).toBeUndefined();
 		expect(comparison.stakeholderView[0].private_context_used).toBe(true);
 		expect(comparison.stakeholderView[0].private_context_exposed).toBe(false);
 	});

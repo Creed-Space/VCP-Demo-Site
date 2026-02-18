@@ -41,7 +41,9 @@ export async function loadVcpWasm(): Promise<VcpWasmModule | null> {
 			wasmModule = wasm as unknown as VcpWasmModule;
 			return wasmModule;
 		} catch (err) {
-			console.warn('VCP WASM failed to load, falling back to JS:', err);
+			if (import.meta.env.DEV) {
+				console.warn('VCP WASM failed to load, falling back to JS:', err);
+			}
 			return null;
 		}
 	})();

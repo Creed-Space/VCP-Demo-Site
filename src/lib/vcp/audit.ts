@@ -33,7 +33,9 @@ function saveAuditToStorage(entries: AuditEntry[]): void {
 		const trimmed = entries.slice(-100);
 		localStorage.setItem(AUDIT_STORAGE_KEY, JSON.stringify(trimmed));
 	} catch {
-		console.warn('Failed to save audit trail to localStorage');
+		if (import.meta.env.DEV) {
+			console.warn('Failed to save audit trail to localStorage');
+		}
 	}
 }
 

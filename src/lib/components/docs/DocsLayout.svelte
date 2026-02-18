@@ -304,7 +304,6 @@
 		top: 60px;
 		height: calc(100vh - 60px);
 		overflow-y: auto;
-		overscroll-behavior: contain;
 	}
 
 	/* Search */
@@ -337,12 +336,6 @@
 		color: var(--color-text);
 		font-size: 0.875rem;
 		transition: all var(--transition-fast);
-	}
-
-	/* Hide native search clear button (we have a custom one) */
-	.search-input::-webkit-search-cancel-button {
-		-webkit-appearance: none;
-		appearance: none;
 	}
 
 	.search-input::placeholder {
@@ -409,10 +402,6 @@
 	.sidebar-home.active {
 		background: var(--color-primary-muted);
 		color: var(--color-primary);
-	}
-
-	.home-icon {
-		font-size: 1.25rem;
 	}
 
 	.nav-section {

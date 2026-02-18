@@ -271,7 +271,7 @@ describe('filterContextForPlatform', () => {
 		const manifest = makeManifest();
 		const consent = makeConsent();
 		const filtered = filterContextForPlatform(ctx, manifest, consent);
-		expect((filtered as Record<string, unknown>).private_context).toBeUndefined();
+		expect((filtered as unknown as Record<string, unknown>).private_context).toBeUndefined();
 	});
 
 	it('sets private_fields_exposed to 0 by design', () => {
