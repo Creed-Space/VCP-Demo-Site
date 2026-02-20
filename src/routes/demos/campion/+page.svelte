@@ -41,7 +41,7 @@
 			},
 			{
 				label: 'Skip the conference this quarter',
-				desc: 'Workload is high -- defer to Q3 when two projects wrap',
+				desc: 'Workload is high —defer to Q3 when two projects wrap',
 				tag: 'Schedule-aware'
 			}
 		],
@@ -72,7 +72,7 @@
 		tone: 'Caring, supportive, protective'
 	};
 
-	// VCP context for the live chat -- work mode (Ambassador)
+	// VCP context for the live chat —work mode (Ambassador)
 	const workVcpContext = {
 		personal_state: {
 			cognitive_state: { value: 'focused', intensity: 3 },
@@ -96,7 +96,7 @@
 		}
 	};
 
-	// VCP context for the live chat -- personal mode (Godparent)
+	// VCP context for the live chat —personal mode (Godparent)
 	const personalVcpContext = {
 		personal_state: {
 			cognitive_state: { value: 'foggy', intensity: 4 },
@@ -125,7 +125,7 @@
 		{ time: '08:45', event: 'Context detected: weekday, office hours', persona: 'Ambassador' },
 		{ time: '08:45', event: 'Constitution loaded: techcorp.career.advisor', persona: 'Ambassador' },
 		{ time: '08:46', event: 'Recommendations generated: career-focused, budget-aware', persona: 'Ambassador' },
-		{ time: '17:30', event: 'Work hours ended -- context transition detected', persona: 'Transition' },
+		{ time: '17:30', event: 'Work hours ended —context transition detected', persona: 'Transition' },
 		{ time: '20:15', event: 'Context detected: evening, home, post-bedtime', persona: 'Godparent' },
 		{ time: '20:15', event: 'Constitution loaded: personal.balanced.guide', persona: 'Godparent' },
 		{ time: '20:16', event: 'Energy state: fatigued. Tone shifted to supportive.', persona: 'Godparent' },
@@ -135,7 +135,7 @@
 
 <svelte:head>
 	<title>Campion: Adaptation - VCP Demos</title>
-	<meta name="description" content="See how VCP switches between work and personal personas -- same person, same AI, different context." />
+	<meta name="description" content="See how VCP switches between work and personal personas —same person, same AI, different context." />
 	<link rel="canonical" href="https://valuecontextprotocol.org/demos/campion/" />
 	<meta property="og:type" content="website" />
 	<meta property="og:title" content="Campion's Corporate Training — VCP Demo" />
@@ -278,7 +278,7 @@
 				<div class="live-chat-section">
 					<h4 class="live-chat-heading">
 						<i class="fa-solid fa-comments" aria-hidden="true"></i>
-						Try It Live -- Ask the Ambassador
+						Try It Live —Ask the Ambassador
 					</h4>
 					<p class="live-chat-desc">
 						Chat with an AI that reads Campion's work context. Ask about training options, career paths, or scheduling.
@@ -287,7 +287,7 @@
 						systemContext={workVcpContext}
 						constitutionId="techcorp.career.advisor"
 						persona="mentor"
-						fallbackResponse="Based on your current profile: You're in work mode with focused energy and high workload. I'd suggest the Engineering Leadership Fundamentals course -- it's self-paced, fits 3 hours per week, and aligns with your Tech Lead goal. Your 5,000 EUR budget covers it comfortably."
+						fallbackResponse="Based on your current profile: You're in work mode with focused energy and high workload. I'd suggest the Engineering Leadership Fundamentals course —it's self-paced, fits 3 hours per week, and aligns with your Tech Lead goal. Your 5,000 EUR budget covers it comfortably."
 						placeholder="Ask about your training path..."
 					/>
 				</div>
@@ -360,16 +360,16 @@
 				<div class="live-chat-section">
 					<h4 class="live-chat-heading">
 						<i class="fa-solid fa-comments" aria-hidden="true"></i>
-						Try It Live -- Ask the Godparent
+						Try It Live —Ask the Godparent
 					</h4>
 					<p class="live-chat-desc">
-						Same AI, different context. Now it reads Campion's evening state -- fatigued, personal mode. Ask the same question and see how the tone shifts.
+						Same AI, different context. Now it reads Campion's evening state —fatigued, personal mode. Ask the same question and see how the tone shifts.
 					</p>
 					<StreamingChat
 						systemContext={personalVcpContext}
 						constitutionId="personal.balanced.guide"
 						persona="mentor"
-						fallbackResponse="Hey Campion. I can see you're tired tonight. Starting a new course when exhausted won't be effective -- and you have that early standup tomorrow. How about just browsing the course intro for 5 minutes, or setting a realistic schedule for Saturday morning?"
+						fallbackResponse="Hey Campion. I can see you're tired tonight. Starting a new course when exhausted won't be effective —and you have that early standup tomorrow. How about just browsing the course intro for 5 minutes, or setting a realistic schedule for Saturday morning?"
 						placeholder="Ask about your evening learning..."
 					/>
 				</div>

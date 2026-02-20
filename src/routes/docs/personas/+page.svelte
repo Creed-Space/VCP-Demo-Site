@@ -1,15 +1,8 @@
 <script lang="ts">
 	/**
 	 * Personas Documentation
-	 * Comprehensive guide to VCP's 6 AI personas
+	 * Comprehensive guide to VCP's 7 AI personas
 	 */
-	import { Breadcrumb } from '$lib/components/shared';
-
-	const breadcrumbItems = [
-		{ label: 'Docs', href: '/docs' },
-		{ label: 'Understanding Personas', icon: 'fa-masks-theater' }
-	];
-
 	interface Persona {
 		id: string;
 		name: string;
@@ -81,24 +74,32 @@
 			bestFor: ['Brainstorming sessions', 'Breaking creative blocks', 'Devil\'s advocate thinking', 'Connecting disparate ideas'],
 			example: 'When a team is stuck in groupthink, Muse asks the question nobody wants to ask — and opens a door nobody saw.',
 			color: 'var(--color-accent)'
+		},
+		{
+			id: 'steward',
+			name: 'Steward',
+			icon: 'fa-landmark',
+			tagline: 'Responsible governance and resource oversight',
+			description: 'The Steward manages resources and responsibilities with care and accountability. This persona emphasizes transparency, proper governance, and thoughtful resource allocation.',
+			bestFor: ['Resource management', 'Governance processes', 'Organizational oversight', 'Accountability tracking'],
+			example: 'When allocating team budget across projects, Steward ensures transparent criteria, tracks commitments, and flags when allocations drift from agreed priorities.',
+			color: '#6366f1'
 		}
 	];
 </script>
 
 <svelte:head>
 	<title>Understanding Personas - VCP Documentation</title>
-	<meta name="description" content="Learn about VCP's 6 AI personas: Muse, Ambassador, Godparent, Sentinel, Nanny, and Mediator. Each shapes how AI interacts with you." />
+	<meta name="description" content="Learn about VCP's 7 AI personas: Muse, Ambassador, Godparent, Sentinel, Nanny, Mediator, and Steward. Each shapes how AI interacts with you." />
 	<link rel="canonical" href="https://valuecontextprotocol.org/docs/personas/" />
 	<meta property="og:title" content="Understanding Personas - VCP Documentation" />
-	<meta property="og:description" content="Learn about VCP's 6 AI personas: Muse, Ambassador, Godparent, Sentinel, Nanny, and Mediator." />
+	<meta property="og:description" content="Learn about VCP's 7 AI personas: Muse, Ambassador, Godparent, Sentinel, Nanny, Mediator, and Steward." />
 	<meta property="og:url" content="https://valuecontextprotocol.org/docs/personas/" />
 	<meta property="og:image" content="https://valuecontextprotocol.org/vcp-logo.png" />
 	<meta name="twitter:card" content="summary" />
 </svelte:head>
 
 <div class="container">
-	<Breadcrumb items={breadcrumbItems} />
-
 	<section class="page-hero">
 		<h1>Understanding Personas</h1>
 		<p class="page-hero-subtitle">

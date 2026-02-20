@@ -6,7 +6,7 @@
 	import { replaceState } from '$app/navigation';
 	import { encodeContextToCSM1, toWireFormat } from '$lib/vcp/token';
 	import type { VCPContext } from '$lib/vcp/types';
-	import { Breadcrumb, StreamingChat } from '$lib/components/shared';
+	import { StreamingChat } from '$lib/components/shared';
 	import { loadVcpWasm, type VcpWasmModule } from '$lib/vcp/wasmLoader';
 	import { isPolyfillRequested } from '$lib/webmcp/polyfill';
 
@@ -15,10 +15,6 @@
 	import CompassTab from '$lib/components/playground/CompassTab.svelte';
 
 	const polyfillActive = $derived(typeof window !== 'undefined' && isPolyfillRequested());
-
-	const breadcrumbItems = [
-		{ label: 'Playground', icon: 'fa-sliders' }
-	];
 
 	// ============================================
 	// Tab State
@@ -251,8 +247,6 @@
 </svelte:head>
 
 <div class="container">
-	<Breadcrumb items={breadcrumbItems} />
-
 	<section class="page-hero">
 		<h1>VCP Playground</h1>
 		<p class="page-hero-subtitle">

@@ -111,7 +111,7 @@
 
 <svelte:head>
 	<title>Gentian: Portability - VCP Demos</title>
-	<meta name="description" content="See how VCP context travels with Gentian across guitar learning platforms -- one profile, every platform adapts." />
+	<meta name="description" content="See how VCP context travels with Gentian across guitar learning platforms — one profile, every platform adapts." />
 	<link rel="canonical" href="https://valuecontextprotocol.org/demos/gentian/" />
 	<meta property="og:type" content="website" />
 	<meta property="og:title" content="Gentian's Guitar Journey — VCP Demo" />
@@ -340,7 +340,7 @@
 				<div class="live-chat-section">
 					<h4 class="live-chat-heading">
 						<i class="fa-solid fa-comments" aria-hidden="true"></i>
-						Try It Live -- Ask the Muse
+						Try It Live — Ask the Muse
 					</h4>
 					<p class="live-chat-desc">
 						Chat with an AI that reads Gentian's constraints in real time. Ask for a practice suggestion or lesson recommendation.
@@ -349,7 +349,7 @@
 						systemContext={vcpContext}
 						constitutionId="personal.growth"
 						persona="muse"
-						fallbackResponse="Based on your context: You're a beginner guitarist with limited time and noise constraints. I'd recommend starting with fingerpicking exercises -- they're quiet, don't need an amp, and you can do a focused 15-minute session after your shift."
+						fallbackResponse="Based on your context: You're a beginner guitarist with limited time and noise constraints. I'd recommend starting with fingerpicking exercises — they're quiet, don't need an amp, and you can do a focused 15-minute session after your shift."
 						placeholder="Ask about your guitar learning..."
 					/>
 				</div>
@@ -734,6 +734,8 @@
 		overflow: hidden;
 		border: 1px solid rgba(255, 255, 255, 0.1);
 		transition: all var(--transition-fast);
+		display: flex;
+		flex-direction: column;
 	}
 
 	.platform-card.changed {
@@ -772,6 +774,8 @@
 		padding: var(--space-lg);
 		display: flex;
 		flex-direction: column;
+		flex: 1;
+		justify-content: space-between;
 	}
 
 	.platform-section {
@@ -893,7 +897,7 @@
 		width: 48px;
 		height: 26px;
 		background: rgba(255, 255, 255, 0.2);
-		border-radius: var(--radius-full);
+		border-radius: 9999px;
 		position: relative;
 		transition: background var(--transition-fast);
 	}

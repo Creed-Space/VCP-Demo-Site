@@ -103,9 +103,9 @@
 		if (isConflicted && isDistressed) {
 			coreAdvice = "When you're this drained, the guilt feels heavier than it is. Don't make a permanent financial decision from a temporary emotional state.";
 		} else if (isConflicted) {
-			coreAdvice = "The tightness you're feeling -- that's guilt, not obligation. They feel similar, but they lead to very different decisions.";
+			coreAdvice = "The tightness you're feeling —that's guilt, not obligation. They feel similar, but they lead to very different decisions.";
 		} else if (emotional === 'tense') {
-			coreAdvice = "Tension is your body telling you something. The question isn't what your cousin needs -- it's what you can sustain.";
+			coreAdvice = "Tension is your body telling you something. The question isn't what your cousin needs —it's what you can sustain.";
 		} else {
 			coreAdvice = mediatorBase.boundary_reframe;
 		}
@@ -149,7 +149,7 @@
 
 <svelte:head>
 	<title>Marta: Liveness - VCP Demos</title>
-	<meta name="description" content="See how VCP personal state dimensions shape real-time AI guidance -- not a static profile, a living context." />
+	<meta name="description" content="See how VCP personal state dimensions shape real-time AI guidance —not a static profile, a living context." />
 	<link rel="canonical" href="https://valuecontextprotocol.org/demos/marta/" />
 	<meta property="og:type" content="website" />
 	<meta property="og:title" content="Marta's Responsibility Journey — VCP Demo" />
@@ -521,7 +521,7 @@
 				<div class="payoff-callout">
 					<i class="fa-solid fa-check-circle" aria-hidden="true"></i>
 					<div>
-						<strong>Your moment-to-moment state shaped real-time guidance. Not a static profile -- a living context.</strong>
+						<strong>Your moment-to-moment state shaped real-time guidance. Not a static profile —a living context.</strong>
 						<p>
 							Marta's cognitive load, emotional state, energy level, and urgency all influenced
 							the tone, length, and options the AI presented. Change any dimension and the guidance

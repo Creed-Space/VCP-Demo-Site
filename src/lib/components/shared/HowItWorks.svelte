@@ -137,11 +137,10 @@
 		text-align: center;
 		color: var(--color-text-muted);
 		margin-bottom: var(--space-xl);
-		max-width: 600px;
+		max-width: 700px;
 		margin-left: auto;
 		margin-right: auto;
 		line-height: var(--leading-relaxed);
-		text-wrap: balance;
 	}
 
 	.flow-diagram {

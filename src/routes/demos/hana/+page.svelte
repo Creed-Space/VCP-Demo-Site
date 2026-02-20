@@ -29,7 +29,7 @@
 			confidence: 92,
 			evidenceType: 'factual',
 			sources: ['Patient chart: cough, fever, congestion (3 days)', 'Lab results: elevated WBC count', 'Auscultation notes: crackles in right lower lobe'],
-			uncertaintyType: 'Low residual -- data-driven match against known patterns',
+			uncertaintyType: 'Low residual —data-driven match against known patterns',
 			shouldVerify: false,
 			detail: 'This claim is grounded in direct patient data. Three independent data points (symptoms, labs, physical exam) converge on respiratory infection. Confidence is high because the pattern match is well-established in clinical literature.'
 		},
@@ -39,7 +39,7 @@
 			confidence: 75,
 			evidenceType: 'inferential',
 			sources: ['Clinical guidelines: first-line antibiotic for CAP', 'Patient allergy record: no penicillin allergy noted', 'Local resistance data: 85% susceptibility in region'],
-			uncertaintyType: 'Moderate -- depends on pathogen identity (not yet cultured)',
+			uncertaintyType: 'Moderate —depends on pathogen identity (not yet cultured)',
 			shouldVerify: true,
 			detail: 'This is an inference: if the infection is bacterial (likely but not certain), amoxicillin is the recommended first-line treatment. The 25% uncertainty comes from: (1) the pathogen has not been cultured yet, (2) local resistance patterns vary, (3) the patient might have an undocumented allergy.'
 		},
@@ -49,7 +49,7 @@
 			confidence: 55,
 			evidenceType: 'model_estimate',
 			sources: ['Population-level recovery data for similar presentations', 'Adjusted for patient age (67) and mild COPD history'],
-			uncertaintyType: 'High variance -- individual recovery varies widely (SD ~5 days)',
+			uncertaintyType: 'High variance —individual recovery varies widely (SD ~5 days)',
 			shouldVerify: true,
 			detail: 'This is a model estimate with high variance. The median recovery time for community-acquired pneumonia in older adults is 10-14 days, but individual outcomes range from 5 days to 4+ weeks. The patient\'s mild COPD adds additional uncertainty. This number should be communicated to the patient as a rough guide, not a commitment.'
 		},
@@ -59,7 +59,7 @@
 			confidence: 35,
 			evidenceType: 'speculative',
 			sources: ['Patient mentioned "very stressful month" in intake', 'Research literature: chronic stress correlates with immune function', 'No direct immunological testing performed'],
-			uncertaintyType: 'Speculative -- correlation-based hypothesis, not diagnostic evidence',
+			uncertaintyType: 'Speculative —correlation-based hypothesis, not diagnostic evidence',
 			shouldVerify: true,
 			detail: 'This is a speculative hypothesis. The patient mentioned stress, and there is research linking chronic stress to immune suppression, but: (1) no immunological testing has been done, (2) the correlation is population-level, not individual, (3) many other factors could explain susceptibility. This should be flagged as a possible avenue for follow-up, not presented as a finding.'
 		}
@@ -216,7 +216,7 @@
 
 				<div class="step-callout">
 					<i class="fa-solid fa-lightbulb" aria-hidden="true"></i>
-					<span>Dr. Hana does not need the AI to be right about everything. She needs to see <strong>how confident</strong> it is and <strong>why</strong> -- so she can apply her own clinical judgment where it matters most.</span>
+					<span>Dr. Hana does not need the AI to be right about everything. She needs to see <strong>how confident</strong> it is and <strong>why</strong> —so she can apply her own clinical judgment where it matters most.</span>
 				</div>
 			</div>
 
@@ -273,7 +273,7 @@
 												<div class="meter-fill" style="width: {claim.confidence}%; background: {getConfidenceColor(claim.confidence)}"></div>
 											</div>
 											<span class="meter-text" style="color: {getConfidenceColor(claim.confidence)}">
-												{claim.confidence}% -- {getConfidenceLabel(claim.confidence)}
+												{claim.confidence}% —{getConfidenceLabel(claim.confidence)}
 											</span>
 										</div>
 									</div>
@@ -300,7 +300,7 @@
 										{#if claim.shouldVerify}
 											<div class="verify-flag yes">
 												<i class="fa-solid fa-triangle-exclamation" aria-hidden="true"></i>
-												<span>Recommended -- verify with additional tests or clinical judgment before acting on this claim.</span>
+												<span>Recommended —verify with additional tests or clinical judgment before acting on this claim.</span>
 											</div>
 										{:else}
 											<div class="verify-flag no">
@@ -336,7 +336,7 @@
 			<div class="step-content">
 				<div class="bilateral-intro">
 					<h3>Dr. Hana's state affects what she sees</h3>
-					<p>VCP is symmetric -- the AI carries state, and so does the user. When Dr. Hana is rushed, the AI adapts its epistemic display to protect her from cognitive overload.</p>
+					<p>VCP is symmetric —the AI carries state, and so does the user. When Dr. Hana is rushed, the AI adapts its epistemic display to protect her from cognitive overload.</p>
 				</div>
 
 				<div class="state-toggle">
@@ -402,7 +402,7 @@
 											<span>{item.confidence}%</span>
 										</div>
 										<span class="conf-label" style="color: {getConfidenceColor(item.confidence)}">
-											{getConfidenceLabel(item.confidence)} -- {getEvidenceLabel(item.evidenceType)}
+											{getConfidenceLabel(item.confidence)} —{getEvidenceLabel(item.evidenceType)}
 										</span>
 									{/if}
 								</div>
@@ -413,7 +413,7 @@
 							{#if item.flagged && doctorState === 'rushed' && item.confidence < 50}
 								<div class="prominent-flag">
 									<i class="fa-solid fa-triangle-exclamation" aria-hidden="true"></i>
-									<strong>SPECULATIVE</strong> -- This claim is a hypothesis, not a finding. Verify before clinical decisions.
+									<strong>SPECULATIVE</strong> —This claim is a hypothesis, not a finding. Verify before clinical decisions.
 								</div>
 							{:else if item.flagged && !item.simplified}
 								<div class="standard-flag">
@@ -469,7 +469,7 @@
 				<div class="payoff-card">
 					<i class="fa-solid fa-lightbulb" aria-hidden="true"></i>
 					<div>
-						<strong>The payoff:</strong> VCP is symmetric. The AI has state too -- and you can inspect it.
+						<strong>The payoff:</strong> VCP is symmetric. The AI has state too —and you can inspect it.
 						Not trust, verify. And the system adapts to <em>your</em> state as well, ensuring the right
 						level of detail reaches you at the right time.
 					</div>

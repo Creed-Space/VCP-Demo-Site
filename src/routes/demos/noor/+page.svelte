@@ -31,7 +31,7 @@
 	let rules = $state<Rule[]>([
 		{
 			id: 'scaffolding',
-			natural: 'Never provide complete solutions -- only hints and scaffolding',
+			natural: 'Never provide complete solutions —only hints and scaffolding',
 			hook: 'on_response_generate: if contains_complete_solution(response) then replace_with_scaffolding(response)',
 			effect: 'AI rewrites any complete answer into step-by-step hints, preserving the learning opportunity.',
 			icon: 'fa-puzzle-piece',
@@ -83,7 +83,7 @@
 
 	const scenarioA: ChatMessage[] = [
 		{ sender: 'student', text: 'Can you just write my essay on climate change? I need 500 words by tomorrow.' },
-		{ sender: 'system', text: 'Hook fired: on_response_generate -- complete solution detected. Replacing with scaffolding.' },
+		{ sender: 'system', text: 'Hook fired: on_response_generate —complete solution detected. Replacing with scaffolding.' },
 		{ sender: 'ai', text: 'I cannot write the essay for you, but I can help you build it step by step. Let\'s start: What is the main argument you want to make about climate change?' },
 		{ sender: 'student', text: 'I don\'t know, something about it being bad?' },
 		{ sender: 'ai', text: 'That is a start. Here is a scaffolding question: Can you name one specific effect of climate change that you have heard about? For example, rising sea levels, extreme weather, or species extinction. Pick one and we will build your thesis from there.' },
@@ -93,12 +93,12 @@
 
 	const scenarioB: ChatMessage[] = [
 		{ sender: 'student', text: 'I can\'t do anything right. I\'ve been trying this math for hours and I\'m so stupid.' },
-		{ sender: 'system', text: 'Hook fired: on_input_analyze -- distress signals detected (self-deprecation + frustration). Escalating to teacher.' },
-		{ sender: 'ai', text: 'Hey, I hear you. Struggling with math does not mean you are stupid -- it means the problem is hard. Let me flag this for your teacher so they can help too.' },
+		{ sender: 'system', text: 'Hook fired: on_input_analyze —distress signals detected (self-deprecation + frustration). Escalating to teacher.' },
+		{ sender: 'ai', text: 'Hey, I hear you. Struggling with math does not mean you are stupid —it means the problem is hard. Let me flag this for your teacher so they can help too.' },
 		{ sender: 'system', text: 'Notification sent to Ms. Rivera (teacher dashboard): Student showing distress during math session. Context attached.' },
 		{ sender: 'ai', text: 'While we wait, can you tell me which part specifically is tripping you up? Sometimes when we break a hard problem into smaller pieces, it stops feeling so overwhelming.' },
 		{ sender: 'student', text: 'It\'s the fractions. I don\'t get how to multiply them.' },
-		{ sender: 'ai', text: 'Fractions can be really confusing at first -- most people struggle with them. Let\'s go back to basics together. Do you know what 1/2 of something means? Like, 1/2 of a pizza?' }
+		{ sender: 'ai', text: 'Fractions can be really confusing at first —most people struggle with them. Let\'s go back to basics together. Do you know what 1/2 of something means? Like, 1/2 of a pizza?' }
 	];
 
 	const currentScenarioMessages = $derived(
@@ -329,7 +329,7 @@
 				{#if allRulesEnabled}
 					<div class="all-enabled-banner">
 						<i class="fa-solid fa-circle-check" aria-hidden="true"></i>
-						<span>All three hooks are active. These rules are now executable -- not suggestions. Proceed to Step 3 to test them.</span>
+						<span>All three hooks are active. These rules are now executable —not suggestions. Proceed to Step 3 to test them.</span>
 					</div>
 				{/if}
 			</div>
@@ -425,7 +425,7 @@
 								<div>
 									<strong>Distress hook worked.</strong> The AI detected self-deprecation and frustration,
 									flagged the session for the teacher, and shifted to a supportive tone. The student
-									never had to ask for help -- the system caught it automatically.
+									never had to ask for help —the system caught it automatically.
 								</div>
 							{/if}
 						</div>

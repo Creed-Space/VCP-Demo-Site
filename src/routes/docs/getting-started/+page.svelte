@@ -29,9 +29,9 @@
 			VCP is built on three pillars:
 		</p>
 		<ul>
-			<li><strong>Portability</strong> -- Your context travels with you across platforms and services</li>
-			<li><strong>Adaptation</strong> -- AI behavior shifts automatically as your situation changes</li>
-			<li><strong>Liveness</strong> -- Personal state updates in real time, shaping responses moment to moment</li>
+			<li><strong>Portability</strong> —Your context travels with you across platforms and services</li>
+			<li><strong>Adaptation</strong> —AI behavior shifts automatically as your situation changes</li>
+			<li><strong>Liveness</strong> —Personal state updates in real time, shaping responses moment to moment</li>
 		</ul>
 
 		<blockquote>

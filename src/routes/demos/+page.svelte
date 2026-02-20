@@ -1,11 +1,5 @@
 <script lang="ts">
 	/** Demos Hub — Two-tier persona cards: 3 primary + 3 niche */
-	import { Breadcrumb } from '$lib/components/shared';
-
-	const breadcrumbItems = [
-		{ label: 'Interactive Demos', icon: 'fa-play-circle' }
-	];
-
 	const primaryDemos = [
 		{
 			href: '/demos/gentian',
@@ -113,8 +107,6 @@
 </svelte:head>
 
 <div class="container">
-	<Breadcrumb items={breadcrumbItems} />
-
 	<section class="page-hero">
 		<h1>Pick a Story</h1>
 		<p class="page-hero-subtitle">
@@ -335,7 +327,7 @@
 		display: flex;
 		align-items: center;
 		gap: var(--space-lg);
-		margin: var(--space-lg) 0 var(--space-xl);
+		margin: var(--space-2xl) 0 var(--space-xl);
 	}
 
 	.divider-line {
@@ -429,13 +421,17 @@
 
 	/* Production demos */
 	.production-demos {
-		margin-bottom: var(--space-2xl);
+		margin-bottom: var(--space-3xl);
+	}
+
+	.production-demos h2 {
+		margin-bottom: var(--space-xl);
 	}
 
 	.production-grid {
 		display: grid;
 		grid-template-columns: repeat(2, 1fr);
-		gap: var(--space-lg);
+		gap: var(--space-xl);
 	}
 
 	.production-card {
@@ -443,7 +439,7 @@
 		flex-direction: column;
 		text-decoration: none;
 		color: var(--color-text);
-		padding: var(--space-xl);
+		padding: var(--space-2xl) var(--space-xl);
 		border: 1px solid rgba(167, 139, 250, 0.2);
 		background: linear-gradient(135deg, rgba(167, 139, 250, 0.05) 0%, rgba(99, 102, 241, 0.05) 100%);
 	}
@@ -491,27 +487,28 @@
 
 	/* Build section */
 	.build-section {
-		margin-bottom: var(--space-2xl);
+		margin-top: var(--space-2xl);
+		margin-bottom: var(--space-3xl);
 	}
 
 	.build-section h2 {
 		display: flex;
 		align-items: center;
 		gap: var(--space-sm);
-		margin-bottom: var(--space-lg);
+		margin-bottom: var(--space-xl);
 	}
 
 	.tools-grid {
 		display: grid;
 		grid-template-columns: repeat(2, 1fr);
-		gap: var(--space-md);
+		gap: var(--space-lg);
 	}
 
 	.tool-card {
 		display: flex;
 		align-items: center;
 		gap: var(--space-lg);
-		padding: var(--space-lg);
+		padding: var(--space-xl);
 		background: var(--color-bg-card);
 		border-radius: var(--radius-lg);
 		border: 1px solid rgba(255, 255, 255, 0.1);

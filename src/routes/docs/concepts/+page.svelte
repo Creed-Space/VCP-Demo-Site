@@ -479,6 +479,11 @@
 					<td>Calm, structured, empathetic</td>
 					<td>Decisions, obligations, fairness processes</td>
 				</tr>
+				<tr>
+					<td><i class="fa-solid fa-landmark" aria-hidden="true"></i> <strong>Steward</strong></td>
+					<td>Responsible, accountable, transparent</td>
+					<td>Resource management, governance, organizational oversight</td>
+				</tr>
 			</tbody>
 		</table>
 

@@ -161,6 +161,7 @@
 		border-left: 3px solid;
 		border-radius: var(--radius-md);
 		padding: var(--space-md);
+		overflow: hidden;
 	}
 
 	.tier-header {

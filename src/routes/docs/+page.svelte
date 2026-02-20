@@ -2,11 +2,6 @@
 	/**
 	 * Documentation Hub - Index of all technical documentation
 	 */
-	import { Breadcrumb } from '$lib/components/shared';
-
-	const breadcrumbItems = [
-		{ label: 'Documentation', icon: 'fa-book' }
-	];
 </script>
 
 <svelte:head>
@@ -24,12 +19,10 @@
 </svelte:head>
 
 <div class="container">
-	<Breadcrumb items={breadcrumbItems} />
-
 	<section class="page-hero">
 		<h1>Documentation</h1>
 		<p class="page-hero-subtitle">
-			Technical guides, API reference, and specifications for implementing VCP --
+			Technical guides, API reference, and specifications for implementing VCP —
 			built on three pillars: portability, adaptation, and liveness.
 		</p>
 	</section>
@@ -63,10 +56,10 @@
 			</a>
 
 			<!-- Understanding Personas -->
-			<a href="/docs/concepts" class="doc-card">
+			<a href="/docs/personas" class="doc-card">
 				<span class="doc-icon"><i class="fa-solid fa-masks-theater" aria-hidden="true"></i></span>
 				<h3>Understanding Personas</h3>
-				<p>Learn about VCP's 6 personas: Muse, Ambassador, Godparent, Sentinel, Nanny, and Mediator.</p>
+				<p>Learn about VCP's 7 personas: Muse, Ambassador, Godparent, Sentinel, Nanny, Mediator, and Steward.</p>
 				<span class="doc-time">8 min read</span>
 			</a>
 
@@ -171,7 +164,8 @@ R:🧠focused:3|💭calm:4|🩺neutral:1</code></pre>
 	}
 
 	.doc-card {
-		display: block;
+		display: flex;
+		flex-direction: column;
 		flex: 0 1 calc(33.333% - var(--space-lg));
 		min-width: 280px;
 		background: var(--color-bg-card);
@@ -210,6 +204,7 @@ R:🧠focused:3|💭calm:4|🩺neutral:1</code></pre>
 	.doc-time {
 		font-size: 0.75rem;
 		color: var(--color-text-subtle);
+		margin-top: auto;
 	}
 
 	.section-divider {

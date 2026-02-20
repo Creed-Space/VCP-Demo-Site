@@ -152,11 +152,11 @@
 		<p class="page-hero-explainer">
 			VCP is not a product. It is an open protocol that lets you define your preferences,
 			constraints, and current state once — and have every compatible AI and service adapt
-			to you automatically, in&nbsp;real&nbsp;time.
+			to you automatically,<br />in&nbsp;real&nbsp;time.
 		</p>
 	</section>
 
-	<GlowDivider />
+	<GlowDivider margin="4rem" />
 
 	<!-- Three Pillars -->
 	<section class="content-section">
@@ -181,7 +181,7 @@
 		</div>
 	</section>
 
-	<GlowDivider />
+	<GlowDivider margin="4rem" />
 
 	<!-- How It Works -->
 	<section class="content-section">
@@ -226,7 +226,7 @@
 		</div>
 	</section>
 
-	<GlowDivider />
+	<GlowDivider margin="4rem" />
 
 	<!-- Protocol Stack -->
 	<section class="content-section">
@@ -268,7 +268,7 @@
 		</div>
 	</section>
 
-	<GlowDivider />
+	<GlowDivider margin="4rem" />
 
 	<!-- Three-Layer Model -->
 	<section class="content-section">
@@ -295,7 +295,7 @@
 		</div>
 	</section>
 
-	<GlowDivider />
+	<GlowDivider margin="4rem" />
 
 	<!-- What Makes It Different -->
 	<section class="content-section">
@@ -307,7 +307,7 @@
 
 		<div class="contrast-table">
 			<div class="contrast-row contrast-header">
-				<div class="contrast-cell">VCP Approach</div>
+				<div class="contrast-cell vcp-approach">VCP Approach</div>
 				<div class="contrast-cell">Common Approaches</div>
 			</div>
 			<div class="contrast-row">
@@ -329,7 +329,7 @@
 		</div>
 	</section>
 
-	<GlowDivider />
+	<GlowDivider margin="4rem" />
 
 	<!-- MCP Integration -->
 	<section class="content-section">
@@ -363,7 +363,7 @@
 		</div>
 	</section>
 
-	<GlowDivider />
+	<GlowDivider margin="4rem" />
 
 	<!-- Demo Links -->
 	<section class="content-section">
@@ -400,7 +400,7 @@
 	}
 
 	.content-section {
-		margin-bottom: var(--space-2xl);
+		margin-bottom: var(--space-3xl);
 	}
 
 	.content-section h2 {
@@ -587,6 +587,10 @@
 	.contrast-header .contrast-cell {
 		font-weight: 600;
 		color: var(--color-text);
+	}
+
+	.contrast-header .vcp-approach {
+		color: var(--color-primary);
 	}
 
 	.contrast-cell {
@@ -802,8 +806,5 @@
 			gap: var(--space-sm);
 		}
 
-		.section-title {
-			font-size: 1.5rem;
 		}
-	}
 </style>

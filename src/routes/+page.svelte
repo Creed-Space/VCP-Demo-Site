@@ -28,7 +28,7 @@
 		<FloatingOrbs count={3} intensity={0.4} />
 		<div class="container aurora-content">
 			<p class="hero-eyebrow">Open Standard</p>
-			<h1 class="hero-heading">Context That <span class="highlight">Travels</span> With You</h1>
+			<h1 class="hero-heading"><span class="highlight">Context</span> That <span class="highlight">Travels</span> With You</h1>
 			<p class="aurora-subtitle animate-hero-subtitle">
 				Set your preferences once. Every AI and service adapts &mdash;
 				in real time, across platforms, always current.
@@ -476,7 +476,7 @@
 		position: relative;
 		z-index: 1;
 		text-align: center;
-		padding: var(--space-2xl) var(--space-lg);
+		padding: var(--space-3xl) var(--space-lg);
 	}
 
 	.hero-heading {
@@ -484,7 +484,7 @@
 		font-weight: 800;
 		letter-spacing: -0.03em;
 		line-height: 1.1;
-		margin-bottom: var(--space-lg);
+		margin-bottom: var(--space-xl);
 		animation: fadeInUp 0.6s cubic-bezier(0.4, 0, 0.2, 1) 0.2s both;
 	}
 
@@ -499,7 +499,7 @@
 		font-size: var(--text-xl);
 		color: var(--color-text-muted);
 		max-width: 640px;
-		margin: 0 auto var(--space-xl);
+		margin: 0 auto var(--space-2xl);
 		line-height: var(--leading-relaxed);
 	}
 
@@ -623,8 +623,8 @@
 
 	/* Hero typewriter */
 	.hero-typewriter {
-		margin-top: var(--space-sm);
-		margin-bottom: var(--space-xl);
+		margin-top: var(--space-md);
+		margin-bottom: var(--space-2xl);
 		font-size: var(--text-sm);
 		color: var(--color-text-subtle);
 		min-height: 1.5em;

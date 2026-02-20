@@ -3,12 +3,7 @@
 	 * UVC Naming Scheme Documentation
 	 * Universal Value Code token format and resolution
 	 */
-	import { Breadcrumb } from '$lib/components/shared';
-
-	const breadcrumbItems = [
-		{ label: 'Docs', href: '/docs' },
-		{ label: 'UVC Naming', icon: 'fa-tag' }
-	];
+	import { GlowDivider } from '$lib/components/shared';
 </script>
 
 <svelte:head>
@@ -23,8 +18,6 @@
 </svelte:head>
 
 <div class="container-narrow">
-	<Breadcrumb items={breadcrumbItems} />
-
 	<section class="page-hero">
 		<h1>UVC Naming</h1>
 		<p class="page-hero-subtitle">
@@ -57,6 +50,8 @@
 		</div>
 	</section>
 
+	<GlowDivider />
+
 	<!-- Semantic Mapping -->
 	<section class="doc-section">
 		<h2>Semantic Mapping</h2>
@@ -76,12 +71,12 @@
 				<tbody>
 					<tr>
 						<td><code>domain</code></td>
-						<td>Value domain -- the broad area of concern</td>
+						<td>Value domain —the broad area of concern</td>
 						<td>family, work, secure, health</td>
 					</tr>
 					<tr>
 						<td><code>approach</code></td>
-						<td>Approach within the domain -- how values are applied</td>
+						<td>Approach within the domain —how values are applied</td>
 						<td>safe, strict, flexible, balanced</td>
 					</tr>
 					<tr>
@@ -91,18 +86,20 @@
 					</tr>
 					<tr>
 						<td><code>version</code></td>
-						<td>Semantic version (optional) -- pinned or ranged</td>
+						<td>Semantic version (optional) —pinned or ranged</td>
 						<td>@1.2.0, @2.0.0</td>
 					</tr>
 					<tr>
 						<td><code>namespace</code></td>
-						<td>Organizational scope (optional) -- who governs</td>
+						<td>Organizational scope (optional) —who governs</td>
 						<td>:SEC, :NHS, :acme-corp</td>
 					</tr>
 				</tbody>
 			</table>
 		</div>
 	</section>
+
+	<GlowDivider />
 
 	<!-- Namespace Tiers -->
 	<section class="doc-section">
@@ -163,6 +160,8 @@
 		</div>
 	</section>
 
+	<GlowDivider />
+
 	<!-- Resolution -->
 	<section class="doc-section">
 		<h2>Resolution</h2>
@@ -212,6 +211,8 @@
 			</div>
 		</div>
 	</section>
+
+	<GlowDivider />
 
 	<!-- Examples -->
 	<section class="doc-section">
@@ -297,10 +298,8 @@
 
 <style>
 	.doc-section {
-		margin-bottom: var(--space-3xl);
-		padding-bottom: var(--space-3xl);
-		border-bottom: 2px solid transparent;
-		border-image: linear-gradient(90deg, transparent, var(--color-primary), transparent) 1;
+		margin-bottom: 4rem;
+		padding-bottom: 4rem;
 	}
 
 	.doc-section h2 {

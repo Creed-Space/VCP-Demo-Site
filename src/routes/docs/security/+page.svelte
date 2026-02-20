@@ -3,12 +3,6 @@
 	 * Security Model Documentation
 	 * How VCP protects user data
 	 */
-	import { Breadcrumb } from '$lib/components/shared';
-
-	const breadcrumbItems = [
-		{ label: 'Docs', href: '/docs' },
-		{ label: 'Security Model', icon: 'fa-shield-halved' }
-	];
 </script>
 
 <svelte:head>
@@ -23,8 +17,6 @@
 </svelte:head>
 
 <div class="container-narrow">
-	<Breadcrumb items={breadcrumbItems} />
-
 	<section class="page-hero">
 		<h1>Security Model</h1>
 		<p class="page-hero-subtitle">
@@ -269,7 +261,7 @@
 				<p>
 					Signature verification <strong>must</strong> pass before content reaches
 					the LLM. If verification fails, the bundle is rejected and the request
-					fails closed -- no fallback to unsigned content.
+					fails closed —no fallback to unsigned content.
 				</p>
 			</article>
 
@@ -386,7 +378,7 @@
 				<p class="threat-attack">Attacker modifies constitution content to inject malicious instructions.</p>
 				<div class="threat-defense">
 					<span class="defense-badge">Defense</span>
-					Content safety attestation -- SHA-256 hash in signed manifest binds content to author's signature.
+					Content safety attestation —SHA-256 hash in signed manifest binds content to author's signature.
 				</div>
 			</div>
 
@@ -410,7 +402,7 @@
 				<p class="threat-attack">Oversized constitution monopolizes the LLM's context window.</p>
 				<div class="threat-defense">
 					<span class="defense-badge">Defense</span>
-					Token budget enforcement -- manifest declares max_tokens and orchestrator enforces the limit before injection.
+					Token budget enforcement —manifest declares max_tokens and orchestrator enforces the limit before injection.
 				</div>
 			</div>
 
@@ -422,7 +414,7 @@
 				<p class="threat-attack">Author's signing key is stolen or leaked.</p>
 				<div class="threat-defense">
 					<span class="defense-badge">Defense</span>
-					Key rotation with revocation list -- compromised keys are revoked; bundles signed with revoked keys are rejected.
+					Key rotation with revocation list —compromised keys are revoked; bundles signed with revoked keys are rejected.
 				</div>
 			</div>
 
@@ -434,7 +426,7 @@
 				<p class="threat-attack">Attacker substitutes an older, weaker version of a constitution.</p>
 				<div class="threat-defense">
 					<span class="defense-badge">Defense</span>
-					Version enforcement -- orchestrator tracks minimum required version per constitution ID.
+					Version enforcement —orchestrator tracks minimum required version per constitution ID.
 				</div>
 			</div>
 
@@ -446,7 +438,7 @@
 				<p class="threat-attack">Verification error silently allows unsigned content through.</p>
 				<div class="threat-defense">
 					<span class="defense-badge">Defense</span>
-					Fail-closed mandate -- any verification failure rejects the request. There is no fallback path.
+					Fail-closed mandate —any verification failure rejects the request. There is no fallback path.
 				</div>
 			</div>
 		</div>
@@ -456,7 +448,7 @@
 	<section class="doc-section">
 		<h2>Personal State Privacy</h2>
 		<p class="section-intro">
-			Layer 3 (the R-line) carries real-time personal state -- cognitive load, emotional tone,
+			Layer 3 (the R-line) carries real-time personal state —cognitive load, emotional tone,
 			energy level. These dimensions require the strongest protections.
 		</p>
 
@@ -474,7 +466,7 @@
 				<div class="principle-icon"><i class="fa-solid fa-toggle-on" aria-hidden="true"></i></div>
 				<h3>Boolean Flags Only</h3>
 				<p>
-					When personal state influences constraints, only boolean flags are transmitted --
+					When personal state influences constraints, only boolean flags are transmitted —
 					<code>energy_variable: true</code>, not the underlying condition or intensity.
 				</p>
 			</article>
@@ -493,7 +485,7 @@
 				<h3>Explicit Consent</h3>
 				<p>
 					Sharing personal state with any platform requires explicit, revocable consent.
-					Each dimension can be consented to individually -- granular, not all-or-nothing.
+					Each dimension can be consented to individually —granular, not all-or-nothing.
 				</p>
 			</article>
 		</div>
@@ -533,15 +525,18 @@
 
 	/* Principle cards */
 	.principle-cards {
-		display: flex;
-		flex-wrap: wrap;
-		justify-content: center;
+		display: grid;
+		grid-template-columns: repeat(2, 1fr);
 		gap: var(--space-lg);
 	}
 
+	.principle-card:last-child:nth-child(odd) {
+		grid-column: 1 / -1;
+		max-width: 50%;
+		justify-self: center;
+	}
+
 	.principle-card {
-		flex: 0 1 calc(33.333% - var(--space-lg));
-		min-width: 260px;
 		background: var(--color-bg-card);
 		border-radius: var(--radius-lg);
 		padding: var(--space-lg);
@@ -725,7 +720,7 @@
 		padding: var(--space-md);
 		text-align: center;
 		border-radius: var(--radius-lg);
-		margin-top: -var(--space-sm);
+		margin-top: calc(-1 * var(--space-sm));
 	}
 
 	.trust-you {
@@ -1071,6 +1066,14 @@
 
 		.threat-grid {
 			grid-template-columns: 1fr;
+		}
+
+		.principle-cards {
+			grid-template-columns: 1fr;
+		}
+
+		.principle-card:last-child:nth-child(odd) {
+			max-width: 100%;
 		}
 	}
 </style>

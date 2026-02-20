@@ -38,8 +38,8 @@ vi.mock('$app/stores', () => {
 });
 
 // Mock shared Svelte components as minimal HTML stubs so the Playground can
-// render without pulling in StreamingChat's fetch warmup, ContextLifecycleIndicator's
-// setInterval ticker, or Breadcrumb's icon dependencies.
+// render without pulling in StreamingChat's fetch warmup or ContextLifecycleIndicator's
+// setInterval ticker.
 //
 // Svelte 5 calls components as plain functions (not with `new`), so stubs
 // must be plain functions that append a DOM element to the target.
@@ -58,7 +58,6 @@ vi.mock('$lib/components/shared', () => {
 	}
 
 	return {
-		Breadcrumb: makeStub('nav', 'breadcrumb-stub', 'Breadcrumb'),
 		StreamingChat: makeStub('div', 'streaming-chat', 'StreamingChat'),
 		ContextLifecycleIndicator: makeStub('div', 'lifecycle-indicator-stub', 'Lifecycle')
 	};
